@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cauã Moreira | Desenvolvedor Full Stack</title>
+<meta name="description" content="Portfólio de Cauã Moreira, desenvolvedor Full Stack júnior (Angular, TypeScript, PostgreSQL) com foco em C# e .NET. Projetos, experiência e contato.">
+<meta name="theme-color" content="#05010f">
+<meta property="og:title" content="Cauã Moreira | Desenvolvedor Full Stack">
+<meta property="og:description" content="Dev Full Stack júnior com foco em C# / .NET. Veja projetos, experiência e como falar comigo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cauamor-dev.github.io/">
+<link rel="canonical" href="https://cauamor-dev.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305010f'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23000' stroke='%23c084fc' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='8' fill='none' stroke='%23a855f7' stroke-width='3' transform='rotate(-15 32 32)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Cauã Moreira Martins","jobTitle":"Desenvolvedor Full Stack","url":"https://cauamor-dev.github.io/","sameAs":["https://github.com/cauamor-dev","https://www.linkedin.com/in/cau%C3%A3-moreira-57a2aa353"],"alumniOf":"PUC Minas","worksFor":{"@type":"Organization","name":"Arco Tecnologia"}}</script>
+<style>
+:root{--bg:#05010f;--bg2:#0d0620;--card:rgba(255,255,255,.04);--line:rgba(196,181,253,.16);--tx:#ede9fe;--mut:#a79ecb;--ac:#a855f7;--ac2:#c084fc;--ac3:#7c3aed;--glow:rgba(168,85,247,.35);--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:radial-gradient(1200px 700px at 80% -10%,#2a0f5c55,transparent 60%),radial-gradient(900px 600px at -10% 40%,#4c1d9533,transparent 60%),var(--bg);color:var(--tx);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+a{color:var(--ac2);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--ac2);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ac3);color:#fff;padding:8px 14px;border-radius:8px;z-index:100}.skip:focus{left:8px}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(5,1,15,.65);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--mono);font-weight:600;color:var(--tx);letter-spacing:.02em}.logo b{color:var(--ac2)}
+.links{display:flex;gap:6px;align-items:center}
+.links a{color:var(--mut);padding:8px 12px;border-radius:999px;font-size:.92rem;transition:.2s}
+.links a:hover,.links a.on{color:#fff;background:rgba(168,85,247,.18);text-decoration:none}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font:inherit;cursor:pointer}
+.hero{min-height:100vh;display:grid;align-items:center;padding:110px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.chip{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--ac2);border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.02;letter-spacing:-.03em;margin:18px 0 8px;background:linear-gradient(120deg,#fff 30%,var(--ac2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:var(--mono);font-size:clamp(1rem,2.4vw,1.35rem);color:var(--ac2);min-height:1.8em}
+.role::after{content:"▍";animation:blink 1s steps(1) infinite;color:var(--ac)}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--mut);max-width:560px;margin:14px 0 26px;font-size:1.06rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:500;border:1px solid var(--line);color:var(--tx);background:var(--card);cursor:pointer;font:inherit;font-weight:500;transition:.2s}
+.btn:hover{transform:translateY(-2px);text-decoration:none;border-color:var(--ac2)}
+.btn.p{background:linear-gradient(135deg,var(--ac3),var(--ac));border-color:transparent;color:#fff;box-shadow:0 8px 30px -8px var(--glow)}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;max-width:560px}
+.mini div{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:12px 14px}
+.mini small{display:block;color:var(--mut);font-size:.72rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.mini b{font-size:.95rem}
+.bh{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin:0 auto;transition:transform .15s ease-out}
+.bh svg{width:100%;height:100%;overflow:visible}
+.ring{transform-origin:50% 50%;animation:spin 18s linear infinite}
+.ring2{animation-duration:30s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hint{text-align:center;color:var(--mut);font-family:var(--mono);font-size:.72rem;margin-top:8px}
+section{padding:90px 0;position:relative}
+.eyebrow{font-family:var(--mono);color:var(--ac2);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;margin:8px 0 14px}
+.sub{color:var(--mut);max-width:640px;margin-bottom:34px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.about p{color:#d8d0f2;margin-bottom:14px}
+.term{background:#09041a;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:var(--mono);font-size:.84rem;box-shadow:0 20px 60px -30px var(--glow)}
+.term header{display:flex;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);align-items:center;color:var(--mut)}
+.term header i{width:10px;height:10px;border-radius:50%;background:#3b2a66}
+.term pre{padding:16px;overflow:auto;color:#d8d0f2;line-height:1.7;white-space:pre-wrap}
+.k{color:var(--ac2)}.s{color:#86efac}.c{color:#6b5f93}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.f{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:7px 14px;border-radius:999px;cursor:pointer;font:inherit;font-size:.88rem}
+.f[aria-pressed=true]{background:rgba(168,85,247,.22);color:#fff;border-color:var(--ac2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.card{position:relative;text-align:left;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border-radius:18px;padding:22px;cursor:pointer;color:inherit;font:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s,box-shadow .25s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(300px 160px at var(--mx,80%) var(--my,0%),rgba(168,85,247,.22),transparent 70%);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--ac2);box-shadow:0 20px 50px -25px var(--glow)}.card:hover::before{opacity:1}
+.card>*{position:relative}
+.tag{align-self:flex-start;font-family:var(--mono);font-size:.7rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ac2)}
+.tag.live{color:#86efac;border-color:#86efac55}
+.card h3{font-size:1.25rem}.card p{color:var(--mut);font-size:.94rem;flex:1}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font-family:var(--mono);font-size:.72rem;background:rgba(124,58,237,.18);color:#ddd6fe;padding:3px 9px;border-radius:7px}
+.more{font-family:var(--mono);font-size:.78rem;color:var(--ac2)}
+.others{margin-top:26px}
+.others h3{font-size:1rem;color:var(--mut);margin-bottom:10px;font-weight:500}
+.orow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:12px}
+.orow .card{padding:16px}.orow .card h3{font-size:1.02rem}
+dialog{margin:auto;max-height:calc(100vh - 28px);overflow:auto;border:1px solid var(--ac2);background:#0b0519;color:var(--tx);border-radius:20px;max-width:680px;width:calc(100% - 28px);padding:0;box-shadow:0 30px 120px -20px var(--glow)}
+dialog::backdrop{background:rgba(2,0,8,.75);backdrop-filter:blur(4px)}
+.dlg{padding:28px}.dlg h3{font-size:1.6rem;margin:8px 0}.dlg h4{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac2);margin:18px 0 6px}
+.dlg p,.dlg li{color:#d8d0f2;font-size:.97rem}.dlg ul{padding-left:20px}
+.x{position:absolute;right:14px;top:12px;background:none;border:1px solid var(--line);color:var(--tx);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem}
+.tl{position:relative;padding-left:26px;border-left:1px solid var(--line);display:grid;gap:26px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--ac2);box-shadow:0 0 14px var(--glow)}
+.tl .now::before{background:var(--ac2)}
+.tl h3{font-size:1.1rem}.tl .meta{font-family:var(--mono);font-size:.78rem;color:var(--ac2)}
+.tl ul{margin-top:6px;padding-left:18px;color:var(--mut);font-size:.95rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.sk{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:20px}
+.sk h3{font-size:.95rem;color:var(--ac2);font-family:var(--mono);font-weight:600;margin-bottom:10px}
+.sk .stack span{font-size:.8rem}
+.ai{margin-top:26px;border:1px dashed var(--ac2);border-radius:16px;padding:20px;background:rgba(124,58,237,.08)}
+.ai b{color:var(--ac2)}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.certs div{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px 16px}
+.certs small{display:block;color:var(--mut);font-family:var(--mono);font-size:.74rem}
+.contact{text-align:center}
+.contact .big{font-size:clamp(1.3rem,3.6vw,2.2rem);font-weight:700;display:block;margin:10px 0 22px;word-break:break-all}
+.cta.c{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mut);font-size:.86rem;text-align:center;font-family:var(--mono)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:var(--ac3);color:#fff;padding:10px 18px;border-radius:12px;opacity:0;transition:.3s;z-index:90}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+#cv{display:none}
+@media(max-width:860px){.hero .wrap,.grid2{grid-template-columns:1fr}.hero .wrap>div:last-child{order:-1}.hero{padding-top:90px}.bh{max-width:230px}.hint{display:none}.menu{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(5,1,15,.97);padding:12px;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{width:100%}.mini{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media print{
+ body{background:#fff!important;color:#000!important;overflow:visible}
+ body>*:not(#cv){display:none!important}
+ #cv{display:block!important;font-family:Calibri,Arial,sans-serif;color:#111;font-size:9pt;line-height:1.25}
+ #cv h1{font-size:20pt;color:#3b1d7a;background:none;-webkit-text-fill-color:#3b1d7a;margin:0}
+ #cv h2{font-size:10pt;color:#3b1d7a;border-bottom:1px solid #3b1d7a;margin:7px 0 3px;padding:0;letter-spacing:.04em;text-transform:uppercase}
+ #cv p,#cv li{color:#111;margin:0 0 1px;font-size:9pt}#cv ul{margin:1px 0 3px;padding-left:15px}
+ #cv .row{display:flex;justify-content:space-between}#cv a{color:#111}
+ @page{size:A4;margin:9mm 11mm}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<nav aria-label="Principal"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Início">cauã<b>.dev</b></a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+  <div class="links" id="links">
+    <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#stack">Stack</a><a href="#contato">Contato</a>
+  </div>
+</div></nav>
+
+<main id="main">
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="chip"><span class="dot"></span> Dev Júnior Full Stack · Arco Tecnologia</span>
+    <h1>Cauã Moreira</h1>
+    <div class="role" id="role" aria-live="off">Desenvolvedor Full Stack</div>
+    <p class="lead">Construo interfaces e sistemas de gestão com Angular, TypeScript e PostgreSQL, e estou aprofundando <b>C# e .NET</b> para APIs. Gosto de entender como cada parte funciona, da tela ao banco de dados.</p>
+    <div class="cta">
+      <a class="btn p" href="#projetos">Ver projetos →</a>
+      <button class="btn" id="cvbtn" type="button">⬇ Baixar currículo (PDF)</button>
+      <a class="btn" href="#contato">Falar comigo</a>
+    </div>
+    <div class="mini">
+      <div><small>No trabalho</small><b>Angular · TS · PostgreSQL</b></div>
+      <div><small>Foco</small><b>C# / .NET</b></div>
+      <div><small>Prêmio</small><b>1º lugar TIAW</b></div>
+    </div>
+  </div>
+  <div>
+    <div class="bh" id="bh" aria-hidden="true">
+      <svg viewBox="-250 -250 500 500">
+        <defs>
+          <radialGradient id="g1"><stop offset="0" stop-color="#a855f7" stop-opacity=".55"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></radialGradient>
+          <linearGradient id="d" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".35" stop-color="#c084fc"/><stop offset=".5" stop-color="#fff7ed"/><stop offset=".65" stop-color="#c084fc"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient>
+          <filter id="b"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <circle r="235" fill="url(#g1)"/>
+        <g transform="rotate(-14)"><ellipse rx="215" ry="42" fill="none" stroke="url(#d)" stroke-width="14" filter="url(#b)" opacity=".9"/><ellipse rx="215" ry="42" fill="none" stroke="url(#d)" stroke-width="4"/></g>
+        <g class="ring"><ellipse rx="80" ry="190" fill="none" stroke="url(#d)" stroke-width="2" opacity=".45"/></g>
+        <g class="ring ring2"><circle r="150" fill="none" stroke="#c4b5fd" stroke-opacity=".25" stroke-dasharray="3 12"/><circle cx="150" r="5" fill="#f0abfc"/></g>
+        <circle r="66" fill="#000"/><circle r="67" fill="none" stroke="#f5d0fe" stroke-width="2" opacity=".85"/>
+        <g transform="rotate(-14)"><path d="M-215 0 A215 42 0 0 0 215 0" fill="none" stroke="url(#d)" stroke-width="4"/></g>
+      </svg>
+    </div>
+    <p class="hint">// clique no fundo para ativar a dobra espacial</p>
+  </div>
+</div></header>
+
+<section id="sobre" class="about"><div class="wrap grid2">
+  <div class="rv">
+    <div class="eyebrow">01 · Sobre</div>
+    <h2>Quem está no comando</h2>
+    <p>Tenho 20 anos, moro em Belo Horizonte (MG) e sou <b>Desenvolvedor Júnior Full Stack na Arco Tecnologia</b>, onde comecei como estagiário e fui efetivado. Trabalho com Angular, TypeScript, Java e PostgreSQL em sistemas em produção.</p>
+    <p>Curso <b>Sistemas de Informação na PUC Minas</b> (previsão de formatura em 01/2029) e meu foco de carreira é o ecossistema <b>C# / .NET</b>. Antes de programar, passei por suporte, infraestrutura e e-commerce, o que me deu o olhar de quem usa o sistema, não só de quem o constrói.</p>
+    <p>Fora do código: jogos, animes e ficção científica (Interestelar é a trilha oficial deste site). Estou construindo um jogo autoral com Unity.</p>
+  </div>
+  <div class="term rv" aria-label="Resumo em formato de código">
+    <header><i></i><i></i><i></i><span>&nbsp;cauã.profile.json</span></header>
+<pre>{
+  <span class="k">"nome"</span>: <span class="s">"Cauã Moreira Martins"</span>,
+  <span class="k">"cargo"</span>: <span class="s">"Dev Júnior Full Stack"</span>,
+  <span class="k">"empresa"</span>: <span class="s">"Arco Tecnologia"</span>,
+  <span class="k">"formacao"</span>: <span class="s">"Sist. de Informação, PUC Minas"</span>,
+  <span class="k">"noTrabalho"</span>: [<span class="s">"Angular"</span>, <span class="s">"TypeScript"</span>, <span class="s">"PostgreSQL"</span>],
+  <span class="k">"estudando"</span>: [<span class="s">"C#"</span>, <span class="s">".NET"</span>, <span class="s">"EF Core"</span>, <span class="s">"SQL"</span>],
+  <span class="k">"idiomas"</span>: {<span class="k">"pt"</span>: <span class="s">"nativo"</span>, <span class="k">"en"</span>: <span class="s">"avançado"</span>},
+  <span class="k">"missao"</span>: <span class="s">"construir software útil"</span>,
+  <span class="k">"status"</span>: <span class="s">"em evolução 🚀"</span>
+}</pre>
+  </div>
+</div></section>
+
+<section id="projetos"><div class="wrap">
+  <div class="rv"><div class="eyebrow">02 · Projetos</div>
+  <h2>Missões concluídas e em andamento</h2>
+  <p class="sub">Poucos projetos, bem explicados. Clique em um cartão para ver o problema, as decisões e os limites de cada um.</p></div>
+  <div class="filters rv" id="filters" role="group" aria-label="Filtrar projetos">
+    <button class="f" aria-pressed="true" data-f="all">Todos</button>
+    <button class="f" aria-pressed="false" data-f="net">C# / .NET</button>
+    <button class="f" aria-pressed="false" data-f="web">Web</button>
+    <button class="f" aria-pressed="false" data-f="dados">Dados / SQL</button>
+    <button class="f" aria-pressed="false" data-f="jogo">Jogos</button>
+  </div>
+  <div class="cards" id="cards"></div>
+  <div class="others rv"><h3>Outros projetos (acadêmicos e de curso)</h3><div class="orow" id="others"></div></div>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+  <div class="rv"><div class="eyebrow">03 · Experiência</div><h2>Trajetória</h2><p class="sub">Da infraestrutura ao desenvolvimento: cada etapa me ensinou algo que uso hoje.</p></div>
+  <div class="tl rv">
+    <article class="now"><div class="meta">set/2026 – atual</div><h3>Desenvolvedor Júnior Full Stack · Arco Tecnologia BR</h3>
+      <ul><li>Desenvolvimento e manutenção de sistemas em produção com Angular, TypeScript, JavaScript, Java e PostgreSQL.</li><li>Criação de interfaces web e consultas SQL para um sistema interno de busca de prestadores de serviço automotivo.</li><li>Depuração e correção de defeitos em telas e integrações.</li></ul></article>
+    <article><div class="meta">mai/2026 – set/2026</div><h3>Estagiário de Desenvolvimento Full Stack · Arco Tecnologia BR</h3>
+      <ul><li>Atuação no front-end e no banco de dados de sistemas internos, com Angular, TypeScript, JavaScript e PostgreSQL.</li></ul></article>
+    <article><div class="meta">ago/2025 – mai/2026</div><h3>Estagiário de TI, Suporte e Banco de Dados · Prefeitura de Betim</h3>
+      <ul><li>Cadastro, unificação e suporte aos usuários da rede; manutenção de dados e projetos em banco de dados com SQL.</li></ul></article>
+    <article><div class="meta">jun/2025 – ago/2025</div><h3>Estagiário de Suporte Técnico e Infraestrutura de TI · Prefeitura de Contagem</h3>
+      <ul><li>Suporte técnico de hardware e sistemas e manutenção do ambiente de TI.</li></ul></article>
+    <article><div class="meta">fev/2025 – jun/2025</div><h3>Estagiário de Infraestrutura e Redes · Tiatenda</h3>
+      <ul><li>Suporte, configuração e manutenção de infraestrutura de TI e redes.</li></ul></article>
+    <article><div class="meta">abr/2024 – fev/2025</div><h3>Assistente de E-commerce · Sevet Company</h3>
+      <ul><li>Acompanhamento de vendas e pedidos online e da operação digital da loja.</li></ul></article>
+  </div>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <div class="rv"><div class="eyebrow">04 · Stack</div><h2>Equipamento de bordo</h2><p class="sub">Organizado pelo que uso de fato: no trabalho, nos projetos e no que estou estudando.</p></div>
+  <div class="skills rv">
+    <div class="sk"><h3>// no trabalho</h3><div class="stack"><span>Angular</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>PostgreSQL</span><span>Maker (Softwell)</span></div></div>
+    <div class="sk"><h3>// nos projetos</h3><div class="stack"><span>React</span><span>Node.js</span><span>Express</span><span>Python</span><span>Flask</span><span>C#</span><span>ASP.NET Core</span><span>Unity</span><span>HTML</span><span>CSS</span><span>Bootstrap</span></div></div>
+    <div class="sk"><h3>// estudando</h3><div class="stack"><span>C# / .NET</span><span>Entity Framework Core</span><span>SQL</span><span>Desenvolvimento de APIs</span><span>Testes automatizados</span></div></div>
+    <div class="sk"><h3>// bancos e ferramentas</h3><div class="stack"><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>SQLite</span><span>Git</span><span>GitHub</span><span>Azure</span><span>APIs REST</span></div></div>
+  </div>
+  <div class="ai rv"><b>IA como copiloto.</b> Uso Claude e Claude Code, ChatGPT/Codex, Cursor e GitHub Copilot no dia a dia para acelerar, explicar e revisar código. Minha regra: entender o que a IA gerou, testar e só então usar. Nos meus projetos, isso aparece declarado nos READMEs.</div>
+  <div class="rv" style="margin-top:46px"><div class="eyebrow">Certificações e cursos</div><h2 style="font-size:1.6rem">Aprendizado contínuo</h2></div>
+  <div class="certs rv">
+    <div><b>Criar uma API Web com controladores do ASP.NET Core</b><small>Microsoft Learn · out/2026</small></div>
+    <div><b>Python, Pandas e Intro to Machine Learning</b><small>Kaggle Learn · out/2026</small></div>
+    <div><b>CS50: Introduction to Databases with SQL</b><small>Harvard · set/2026</small></div>
+    <div><b>Foundational C# with Microsoft</b><small>Microsoft Learn e freeCodeCamp · ago/2026</small></div>
+    <div><b>Bootcamp Front-End</b><small>Santander · ago/2025</small></div>
+    <div><b>Princípios de Desenvolvimento Web</b><small>DIO · jul/2025</small></div>
+    <div><b>IA: Prompting Responsável e Copilot</b><small>Microsoft; Fundamentos do ChatGPT; Google IA e Produtividade</small></div>
+  </div>
+</div></section>
+
+<section id="contato" class="contact"><div class="wrap rv">
+  <div class="eyebrow">05 · Contato</div>
+  <h2>Vamos conversar?</h2>
+  <p class="sub" style="margin-inline:auto">Estou aberto a conversar sobre oportunidades em desenvolvimento, principalmente com C# e .NET.</p>
+  <a class="big" href="mailto:caua3595@gmail.com">caua3595@gmail.com</a>
+  <div class="cta c">
+    <button class="btn p" id="copy" type="button">Copiar e-mail</button>
+    <a class="btn" href="https://www.linkedin.com/in/cau%C3%A3-moreira-57a2aa353" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/cauamor-dev" target="_blank" rel="noopener">GitHub</a>
+    <button class="btn" id="cvbtn2" type="button">⬇ Currículo (PDF)</button>
+  </div>
+</div></section>
+</main>
+
+<footer>© 2026 Cauã Moreira Martins · Feito à mão com HTML, CSS e JS · Betim/BH, MG</footer>
+
+<dialog id="dlg" aria-labelledby="dt"><button class="x" id="dx" aria-label="Fechar">✕</button><div class="dlg" id="dbody"></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<div id="cv">
+  <h1>Cauã Moreira Martins</h1>
+  <p><b>Desenvolvedor Full Stack | C# · .NET · Angular · React · TypeScript · SQL</b></p>
+  <p>Betim, MG | caua3595@gmail.com | linkedin.com/in/cauã-moreira-57a2aa353 | github.com/cauamor-dev | cauamor-dev.github.io</p>
+  <h2>Resumo profissional</h2>
+  <p>Desenvolvedor Full Stack Júnior com atuação em sistemas em produção (Angular, TypeScript, Java e PostgreSQL) e base sólida em C#/.NET, APIs REST e SQL. Cursando Sistemas de Informação na PUC Minas, com certificações em SQL (CS50 – Harvard), C#/ASP.NET Core (Microsoft) e Python/dados (Kaggle). Uso IA no dia a dia de desenvolvimento (Claude Code, ChatGPT/Codex, Cursor).</p>
+  <h2>Experiência</h2>
+  <div class="row"><b>Desenvolvedor Júnior Full Stack | Arco Tecnologia BR</b><span>set/2026 – atual</span></div>
+  <ul><li>Desenvolvimento e manutenção de sistemas em produção com Angular, TypeScript, JavaScript, Java, PostgreSQL e plataforma Maker.</li><li>Criação de interfaces web e consultas SQL para sistema interno de busca de prestadores de serviço automotivo.</li><li>Depuração e correção de defeitos em telas e integrações, em ambiente de produção real.</li></ul>
+  <div class="row"><b>Estagiário de Desenvolvimento Full Stack | Arco Tecnologia BR</b><span>mai/2026 – set/2026</span></div>
+  <ul><li>Atuação no front-end e no banco de dados de sistemas internos com Angular, TypeScript, JavaScript, PostgreSQL e Maker.</li></ul>
+  <div class="row"><b>Estagiário de TI – Suporte e Banco de Dados | Prefeitura de Betim</b><span>ago/2025 – mai/2026</span></div>
+  <ul><li>Cadastro, unificação e suporte aos usuários da rede; manutenção de dados e projetos em banco de dados com SQL.</li></ul>
+  <div class="row"><b>Estagiário de Suporte Técnico e Infraestrutura de TI | Prefeitura de Contagem</b><span>jun/2025 – ago/2025</span></div>
+  <ul><li>Suporte técnico de hardware e sistemas e manutenção do ambiente de TI.</li></ul>
+  <div class="row"><b>Estagiário de Infraestrutura e Redes | Tiatenda</b><span>fev/2025 – jun/2025</span></div>
+  <ul><li>Suporte, configuração e manutenção de infraestrutura de TI e redes.</li></ul>
+  <div class="row"><b>Assistente de E-commerce | Sevet Company</b><span>abr/2024 – fev/2025</span></div>
+  <ul><li>Acompanhamento de vendas e pedidos online e da operação digital da loja.</li></ul>
+  <h2>Projetos</h2>
+  <ul><li><b>Ecos da Última Aurora (C#, Unity; em desenvolvimento):</b> jogo autoral com sistemas de gameplay, HUD e testes automáticos.</li>
+  <li><b>Prazo (Python, Flask, SQLite):</b> controle de validade de alimentos, com filtros, histórico, exportação CSV e testes.</li>
+  <li><b>ShotFinder (React, Node.js, Express):</b> busca de filmes e séries (TMDb e Watchmode), favoritos, cache e testes.</li>
+  <li><b>API de Pizzas (C#, ASP.NET Core):</b> API REST com CRUD, controllers e respostas JSON.</li>
+  <li><b>SupportDesk (CS50 SQL):</b> banco de chamados de TI, com modelagem ER, views, índices e consultas.</li>
+  <li><b>Algoritmo do Banqueiro (C# 12, .NET 8):</b> simulação multithread com prevenção de deadlock e sincronização com lock.</li>
+  <li><b>ON Focus Blog (1º lugar no TIAW, PUC Minas, 1º/2025):</b> plataforma web responsiva em HTML, CSS, JavaScript e JSON, em equipe.</li></ul>
+  <h2>Habilidades técnicas</h2>
+  <p><b>Linguagens:</b> C#, JavaScript, TypeScript, Java, Python, SQL, HTML5, CSS3</p>
+  <p><b>Frameworks e plataformas:</b> .NET / ASP.NET Core, Angular, React, Node.js, Flask, Bootstrap, Maker</p>
+  <p><b>Bancos de dados:</b> PostgreSQL, SQL Server, MySQL, SQLite</p>
+  <p><b>Ferramentas e práticas:</b> APIs REST, Git, GitHub, Azure, testes automatizados, metodologias ágeis</p>
+  <p><b>IA aplicada ao desenvolvimento:</b> Claude e Claude Code, ChatGPT e Codex, Cursor, GitHub Copilot</p>
+  <h2>Formação acadêmica</h2>
+  <div class="row"><b>Bacharelado em Sistemas de Informação | PUC Minas (Betim)</b><span>previsão de conclusão: 01/2029</span></div>
+  <p>Ensino Médio completo – SESI/SENAI. Idiomas: Português (nativo), Inglês (avançado), Espanhol (básico a intermediário).</p>
+  <h2>Certificações e cursos</h2>
+  <ul><li><b>Criar uma API Web com os controladores do ASP.NET Core</b> – Microsoft Learn – out/2026</li><li><b>Python, Pandas e Intro to Machine Learning</b> – Kaggle Learn – out/2026</li><li><b>CS50 SQL – Harvard (CS50)</b> – set/2026</li><li><b>Foundational C# with Microsoft</b> – Microsoft Learn e freeCodeCamp – ago/2026</li><li><b>Bootcamp Front-End</b> – Santander – ago/2025; <b>Princípios de Desenvolvimento Web</b> – DIO – jul/2025</li><li><b>IA:</b> Prompting Responsável e Copilot (Microsoft), Fundamentos do ChatGPT, Google IA e Produtividade</li></ul>
+</div>
+
+<script>
+(function(){
+'use strict';
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+var P=[
+{id:'ecos',feat:1,tags:['jogo','net'],tag:'Jogo · em desenvolvimento',live:1,t:'Ecos da Última Aurora',d:'Jogo autoral em C# e Unity, com sistemas de gameplay, HUD e testes automáticos.',st:['C#','Unity','Python'],
+ problema:'Eu queria um projeto grande o bastante para treinar organização de código em C# além de exercícios de curso, e um jogo reúne tudo: estado, entrada do jogador, interface e regras que precisam continuar funcionando quando o projeto cresce.',
+ fiz:['Sistemas de gameplay e HUD em C#, dentro da Unity.','Testes automáticos para os blocos de jogabilidade, para não quebrar o que já funciona.','Trabalho dividido em tarefas e relatórios de cada etapa, com documentação ao lado do código.'],
+ limite:'O repositório é privado por enquanto, então não há link. Posso mostrar o projeto em uma conversa.',links:[]},
+{id:'pizza',feat:1,tags:['net'],tag:'C# · API REST',t:'ContosoPizza API',d:'API REST de estudo em C# e ASP.NET Core (.NET 10), baseada em módulo do Microsoft Learn, com CRUD completo e 14 verificações HTTP.',st:['C#','ASP.NET Core','.NET 10','REST','Python'],
+ problema:'Entender de ponta a ponta como uma requisição HTTP chega a um controller, passa por um service e volta como resposta com o código HTTP certo.',
+ fiz:['CRUD de pizzas com controller, model e service, retornando 200, 201 (com cabeçalho Location), 204, 400 e 404.','14 verificações HTTP executadas por script e guardadas como evidência em JSON (leitura após criação, atualização, exclusão e erros de ID).','README com a explicação "em cinco pontos" para revisar depois.'],
+ limite:'É um exercício introdutório: dados em memória, sem autenticação e sem validação completa de domínio. Próximos passos: Entity Framework Core, injeção de dependência, validação e testes.',links:[['Ver no GitHub','https://github.com/cauamor-dev/contoso-pizza-api']]},
+{id:'prazo',feat:1,tags:['web','dados'],tag:'Python · Web',t:'Prazo',d:'Controle de alimentos por validade, com painel dos itens que vencem em até três dias, filtros, histórico e exportação CSV.',st:['Python','Flask','SQLite','Jinja','unittest'],
+ problema:'É fácil esquecer o que está na despensa e só perceber a validade depois. O Prazo reúne tudo em um painel e destaca o que está perto de vencer.',
+ fiz:['Cadastro com categoria, quantidade, unidade e validade; painel de ativos, próximos do vencimento e vencidos.','Pesquisa e filtros combináveis, registro de consumo ou descarte com opção de desfazer, e exportação CSV.','Testes automatizados com banco temporário (datas, validação, filtros, escape de HTML, exportação).','Interface responsiva e navegação por teclado.'],
+ limite:'Aplicação local para uso individual, sem autenticação nem sincronização. Foi desenvolvida com apoio de IA e validada com testes, como declarado no README.',links:[['Ver no GitHub','https://github.com/cauamor-dev/prazo']]},
+{id:'shot',feat:1,tags:['web'],tag:'React · Node.js',t:'ShotFinder',d:'Busca de filmes e séries por título ou palavra-chave, com streaming disponível, elenco e lista de favoritos.',st:['React','Node.js','Express','TMDb','Watchmode'],
+ problema:'Achar onde assistir um filme ou série sem abrir vários sites: buscar, ver elenco, ver em qual streaming está e guardar favoritos.',
+ fiz:['Interface responsiva em React consumindo uma API própria em Node.js e Express.','Integração com as APIs TMDb e Watchmode, com cache das respostas.','Lista pessoal de favoritos e testes automatizados.'],
+ limite:'Projeto pessoal de estudo; depende de chaves das APIs externas para rodar.',links:[['Ver no GitHub','https://github.com/cauamor-dev/ShotFinder']]},
+{id:'puc',tags:['web'],tag:'JavaScript',t:'PUC News',d:'Portal acadêmico de notícias com busca, favoritos e gerenciamento de conteúdo usando uma API simulada.',st:['JavaScript','Bootstrap','Chart.js','JSON Server'],
+ problema:'Trabalho prático de desenvolvimento web: um portal de notícias com leitura, busca e administração de conteúdo.',fiz:['Busca, favoritos e gerenciamento de conteúdo.','Gráficos com Chart.js e dados servidos por JSON Server.'],limite:'Trabalho acadêmico, com API simulada.',links:[['Ver no GitHub','https://github.com/cauamor-dev/Puc-News']]},
+{id:'banq',tags:['net'],tag:'C# · Concorrência',t:'Algoritmo do Banqueiro',d:'Simulação multithread com prevenção de deadlock e sincronização com lock (C# 12, .NET 8).',st:['C# 12','.NET 8','Threads'],
+ problema:'Entender, na prática, como evitar deadlock quando vários processos disputam recursos (matéria de Sistemas Operacionais).',fiz:['Implementação do algoritmo do banqueiro com threads.','Sincronização com lock para proteger o estado compartilhado.'],limite:'Trabalho acadêmico; repositório não público.',links:[]},
+{id:'sd',tags:['dados'],tag:'SQL · CS50',t:'SupportDesk',d:'Banco de chamados de suporte de TI, com modelagem ER, views, índices e consultas.',st:['SQL','MySQL','SQLite'],
+ problema:'Projeto final do CS50 SQL: modelar um banco para registrar e consultar chamados de suporte.',fiz:['Modelagem entidade-relacionamento e criação das tabelas.','Views, índices e consultas para os relatórios.'],limite:'Projeto de curso; repositório não público.',links:[]},
+{id:'on',tags:['web'],tag:'1º lugar TIAW',t:'ON Focus Blog',d:'Plataforma web responsiva em HTML, CSS, JavaScript e JSON, desenvolvida em equipe (1º lugar no TIAW, PUC Minas, 1º/2025).',st:['HTML','CSS','JavaScript','JSON'],
+ problema:'Projeto em equipe da PUC Minas, premiado com o 1º lugar no TIAW.',fiz:['Desenvolvimento do site responsivo em equipe.','Organização do trabalho em grupo e entrega no prazo.'],limite:'Projeto acadêmico em equipe.',links:[]}
+];
+var filter='all';
+function card(p,small){
+  var b=document.createElement('button');b.className='card rv';b.type='button';b.setAttribute('aria-label','Abrir detalhes de '+p.t);
+  var tg=document.createElement('span');tg.className='tag'+(p.live?' live':'');tg.textContent=p.tag;
+  var h=document.createElement('h3');h.textContent=p.t;
+  b.appendChild(tg);b.appendChild(h);
+  if(!small){var d=document.createElement('p');d.textContent=p.d;b.appendChild(d);}
+  var s=document.createElement('div');s.className='stack';p.st.forEach(function(x){var e=document.createElement('span');e.textContent=x;s.appendChild(e)});b.appendChild(s);
+  var m=document.createElement('span');m.className='more';m.textContent='ver detalhes →';b.appendChild(m);
+  b.addEventListener('click',function(){openP(p)});
+  b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--mx',(e.clientX-r.left)+'px');b.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  return b;
+}
+function render(){
+  var c=$('#cards'),o=$('#others');c.textContent='';o.textContent='';
+  P.forEach(function(p){
+    if(filter!=='all'&&p.tags.indexOf(filter)<0)return;
+    var el=card(p,!p.feat);(p.feat?c:o).appendChild(el);
+  });
+  $('.others').style.display=o.children.length?'':'none';
+  $$('.card').forEach(function(e){requestAnimationFrame(function(){e.classList.add('in')})});
+}
+function openP(p){
+  var r=$('#dbody');r.textContent='';
+  function add(tag,txt,cls){var e=document.createElement(tag);e.textContent=txt;if(cls)e.className=cls;r.appendChild(e);return e}
+  add('span',p.tag,'tag'+(p.live?' live':''));
+  var h=add('h3',p.t);h.id='dt';
+  add('p',p.d);
+  add('h4','Problema');add('p',p.problema);
+  add('h4','O que fiz');var ul=document.createElement('ul');p.fiz.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li)});r.appendChild(ul);
+  add('h4','Limites e próximos passos');add('p',p.limite);
+  add('h4','Stack');var s=document.createElement('div');s.className='stack';p.st.forEach(function(x){var e=document.createElement('span');e.textContent=x;s.appendChild(e)});r.appendChild(s);
+  if(p.links.length){var w=document.createElement('div');w.className='cta';w.style.marginTop='20px';p.links.forEach(function(l){var a=document.createElement('a');a.className='btn p';a.href=l[1];a.target='_blank';a.rel='noopener';a.textContent=l[0]+' ↗';w.appendChild(a)});r.appendChild(w)}
+  $('#dlg').showModal();
+}
+$('#filters').addEventListener('click',function(e){var b=e.target.closest('.f');if(!b)return;filter=b.dataset.f;$$('.f').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()});
+var dlg=$('#dlg');$('#dx').addEventListener('click',function(){dlg.close()});dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+render();
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$$('.rv').forEach(function(e){io.observe(e)});
+var secs=$$('section[id]'),lk=$$('.links a');
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){lk.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(function(s){so.observe(s)});
+$('#menu').addEventListener('click',function(){var o=$('#links').classList.toggle('open');this.setAttribute('aria-expanded',o)});
+lk.forEach(function(a){a.addEventListener('click',function(){$('#links').classList.remove('open');$('#menu').setAttribute('aria-expanded','false')})});
+
+var roles=['Desenvolvedor Full Stack','C# · .NET · APIs REST','Angular · TypeScript · React','SQL · PostgreSQL','Estudante de Sistemas de Informação'],ri=0,ci=0,del=false,rl=$('#role');
+function tick(){var w=roles[ri];ci+=del?-1:1;rl.textContent=w.slice(0,ci);var t=del?28:60;if(!del&&ci===w.length){t=1600;del=true}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;t=350}setTimeout(tick,t)}
+if(reduce){rl.textContent=roles[0]}else{tick()}
+
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2400)}
+$('#copy').addEventListener('click',function(){var m='caua3595@gmail.com';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(function(){toast('E-mail copiado!')},function(){toast(m)})}else{toast(m)}});
+function cv(){toast('Na janela de impressão, escolha "Salvar como PDF".');setTimeout(function(){window.print()},700)}
+$('#cvbtn').addEventListener('click',cv);$('#cvbtn2').addEventListener('click',cv);
+
+var bh=$('#bh');
+if(!reduce&&bh){addEventListener('pointermove',function(e){var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);bh.style.transform='translate('+(x*22)+'px,'+(y*22)+'px) rotate('+(x*4)+'deg)'})}
+
+var cv_=$('#stars'),cx=cv_.getContext('2d'),W,H,S=[],speed=1,target=1,shoot=null,run=true;
+function size(){var d=Math.min(devicePixelRatio||1,2);W=cv_.width=innerWidth*d;H=cv_.height=innerHeight*d;cx.setTransform(d,0,0,d,0,0);W=innerWidth;H=innerHeight;S=[];var n=Math.round(W*H/9000);for(var i=0;i<n;i++)S.push({x:Math.random()*W,y:Math.random()*H,z:Math.random()*.9+.1,p:Math.random()*6.28,c:['#fff','#e9d5ff','#c4b5fd','#a78bfa'][i%4]})}
+size();addEventListener('resize',size);
+function frame(t){
+  if(!run)return;
+  speed+=(target-speed)*.06;
+  cx.clearRect(0,0,W,H);
+  for(var i=0;i<S.length;i++){var s=S[i];
+    s.y+=s.z*.12*speed;if(s.y>H){s.y=-4;s.x=Math.random()*W}
+    var a=.35+.65*Math.abs(Math.sin(t/900+s.p));cx.globalAlpha=a*s.z+.1;cx.strokeStyle=cx.fillStyle=s.c;
+    if(speed>3){cx.lineWidth=s.z*1.4;cx.beginPath();cx.moveTo(s.x,s.y);cx.lineTo(s.x,s.y-s.z*speed*5);cx.stroke()}else{cx.beginPath();cx.arc(s.x,s.y,s.z*1.5,0,6.28);cx.fill()}
+  }
+  if(!shoot&&Math.random()<.002&&speed<2)shoot={x:Math.random()*W,y:Math.random()*H*.4,l:0};
+  if(shoot){cx.globalAlpha=1-shoot.l/60;cx.strokeStyle='#f0abfc';cx.lineWidth=1.6;cx.beginPath();cx.moveTo(shoot.x,shoot.y);cx.lineTo(shoot.x-60,shoot.y-24);cx.stroke();shoot.x+=9;shoot.y+=3.6;if(++shoot.l>60)shoot=null}
+  requestAnimationFrame(frame);
+}
+function paintOnce(){cx.clearRect(0,0,W,H);S.forEach(function(s){cx.globalAlpha=s.z*.8;cx.fillStyle=s.c;cx.beginPath();cx.arc(s.x,s.y,s.z*1.5,0,6.28);cx.fill()})}
+if(reduce){paintOnce();addEventListener('resize',paintOnce)}else{requestAnimationFrame(frame);
+  document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run)requestAnimationFrame(frame)});
+  document.getElementById('top').addEventListener('click',function(e){if(e.target.closest('a,button,.bh,.mini,.lead,h1'))return;target=14;setTimeout(function(){target=1},1300)});
+}
+})();
+</script>
+</body>
+</html>
