@@ -53,7 +53,12 @@ h1 em{font-style:italic;color:var(--ac2)}
 .mini div{border:1px solid var(--line);background:var(--glass);border-radius:var(--r-card);padding:12px 14px}
 .mini small{display:block;color:var(--mut);font-size:.68rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;margin-bottom:2px}
 .mini b{font-size:.92rem;font-weight:500}
-.bh{position:relative;aspect-ratio:1;max-width:380px;width:100%;margin:0 auto;opacity:.72;transition:transform .2s ease-out,opacity .6s}
+.hero .wrap>div:last-child{display:flex;justify-content:center;min-width:0}
+.bh{position:relative;aspect-ratio:1;width:clamp(340px,40vw,560px);flex:none;opacity:.95;transition:transform .2s ease-out,opacity .6s}
+.flow{animation:flow 5s linear infinite}.flow.back{animation-direction:reverse}
+@keyframes flow{to{stroke-dashoffset:-200}}
+.halo{animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.72}}
 .bh svg{width:100%;height:100%;overflow:visible}
 .ring{transform-origin:50% 50%;animation:spin 24s linear infinite}
 .ring2{animation-duration:40s;animation-direction:reverse}
@@ -121,11 +126,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mut);font-siz
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
 .fx{background:none;border:1px solid var(--line);color:var(--mut);font:inherit;padding:5px 10px;border-radius:var(--r-ctl);cursor:pointer}
 .fx:hover{color:var(--tx);border-color:var(--line2)}
-.fx-off #stars{opacity:0}.fx-off .bh{opacity:.35}.fx-off .ring,.fx-off .dot{animation-play-state:paused}
+.fx-off #stars{opacity:0}.fx-off .bh{opacity:.5}.fx-off .bh *,.fx-off .dot{animation-play-state:paused}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#1a1a22;border:1px solid var(--line2);color:var(--tx);padding:10px 16px;border-radius:var(--r-ctl);opacity:0;transition:.3s;z-index:90;font-size:.9rem}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 #cv{display:none}
-@media(max-width:860px){.hero{min-height:auto;padding:110px 0 40px}.hero .wrap,.grid2{grid-template-columns:1fr}.bh{display:none}.menu{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(11,11,16,.97);padding:12px;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{width:100%}.mini{grid-template-columns:1fr}section{padding:72px 0}}
+@media(max-width:860px){.hero{min-height:auto;padding:110px 0 40px}.hero .wrap,.grid2{grid-template-columns:1fr}.hero{overflow:hidden}.hero .wrap{position:relative}.hero .wrap>div:first-child{position:relative;z-index:1}.hero .wrap>div:last-child{position:absolute;top:-70px;right:-70px;width:min(300px,62vw);opacity:.38;pointer-events:none;z-index:0}.bh{width:100%}.menu{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(11,11,16,.97);padding:12px;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{width:100%}.mini{grid-template-columns:1fr}section{padding:72px 0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.ln{opacity:1;transform:none}html{scroll-behavior:auto}}
 @media print{
  body{background:#fff!important;color:#000!important;overflow:visible}
@@ -175,16 +180,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
     <div class="bh" id="bh" aria-hidden="true">
       <svg viewBox="-250 -250 500 500">
         <defs>
-          <radialGradient id="g1"><stop offset="0" stop-color="#a855f7" stop-opacity=".55"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></radialGradient>
-          <linearGradient id="d" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".35" stop-color="#c084fc"/><stop offset=".5" stop-color="#fff7ed"/><stop offset=".65" stop-color="#c084fc"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient>
-          <filter id="b"><feGaussianBlur stdDeviation="6"/></filter>
+          <radialGradient id="bhHalo"><stop offset=".22" stop-color="#8b5cf6" stop-opacity=".42"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+          <radialGradient id="bhHole"><stop offset=".8" stop-color="#030305"/><stop offset="1" stop-color="#140d24"/></radialGradient>
+          <linearGradient id="bhDisk" x1="-235" y1="0" x2="235" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".22" stop-color="#ddd3ff"/><stop offset=".38" stop-color="#fbf9ff"/><stop offset=".62" stop-color="#a78bfa"/><stop offset=".85" stop-color="#6d28d9" stop-opacity=".7"/><stop offset="1" stop-color="#6d28d9" stop-opacity="0"/></linearGradient>
+          <linearGradient id="bhLens" x1="0" y1="-95" x2="0" y2="95" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f5f1ff"/><stop offset=".5" stop-color="#7c3aed" stop-opacity=".2"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+          <filter id="bhSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
         </defs>
-        <circle r="235" fill="url(#g1)"/>
-        <g transform="rotate(-14)"><ellipse rx="215" ry="42" fill="none" stroke="url(#d)" stroke-width="14" filter="url(#b)" opacity=".9"/><ellipse rx="215" ry="42" fill="none" stroke="url(#d)" stroke-width="4"/></g>
-        <g class="ring"><ellipse rx="80" ry="190" fill="none" stroke="url(#d)" stroke-width="2" opacity=".45"/></g>
-        <g class="ring ring2"><circle r="150" fill="none" stroke="#c4b5fd" stroke-opacity=".25" stroke-dasharray="3 12"/><circle cx="150" r="5" fill="#f0abfc"/></g>
-        <circle r="66" fill="#000"/><circle r="67" fill="none" stroke="#f5d0fe" stroke-width="2" opacity=".85"/>
-        <g transform="rotate(-14)"><path d="M-215 0 A215 42 0 0 0 215 0" fill="none" stroke="url(#d)" stroke-width="4"/></g>
+        <circle class="halo" r="245" fill="url(#bhHalo)"/>
+        <g class="ring ring2"><circle r="205" fill="none" stroke="#c4b5fd" stroke-opacity=".16" stroke-dasharray="2 14"/><circle cx="205" r="3.5" fill="#d8ccff"/></g>
+        <g transform="rotate(-11)">
+          <path d="M-235 0 A235 36 0 0 1 235 0" fill="none" stroke="url(#bhDisk)" stroke-width="24" opacity=".35" filter="url(#bhSoft)"/>
+          <path d="M-235 0 A235 36 0 0 1 235 0" fill="none" stroke="url(#bhDisk)" stroke-width="7"/>
+          <path class="flow back" d="M-235 0 A235 36 0 0 1 235 0" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.2" stroke-dasharray="2 18" stroke-linecap="round"/>
+        </g>
+        <ellipse rx="82" ry="87" fill="none" stroke="url(#bhLens)" stroke-width="14" opacity=".45" filter="url(#bhSoft)"/>
+        <ellipse rx="79" ry="83" fill="none" stroke="url(#bhLens)" stroke-width="3.4"/>
+        <circle r="62" fill="url(#bhHole)"/>
+        <circle r="63.5" fill="none" stroke="#f4efff" stroke-opacity=".85" stroke-width="1.6"/>
+        <g transform="rotate(-11)">
+          <path d="M-235 0 A235 36 0 0 0 235 0" fill="none" stroke="url(#bhDisk)" stroke-width="26" opacity=".4" filter="url(#bhSoft)"/>
+          <path d="M-235 0 A235 36 0 0 0 235 0" fill="none" stroke="url(#bhDisk)" stroke-width="8.5"/>
+          <path class="flow" d="M-235 0 A235 36 0 0 0 235 0" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 18"/>
+        </g>
       </svg>
     </div>
     </div>
